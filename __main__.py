@@ -5,15 +5,15 @@ from time import sleep
 
 driver = webdriver.Chrome()
 
-def getChatUrl(phone):
+def get_chat_url(phone):
     return 'https://web.whatsapp.com/send?phone={}&text&type=phone_number&app_absent=0'.format(phone)
 
-def getTextbox():
+def get_textbox():
     return driver.find_element(By.CSS_SELECTOR, '[data-testid="conversation-panel-wrapper"] [role="textbox"][contenteditable]')
 
 def wait_chat():
     try:
-        textbox = getTextbox()
+        textbox = get_textbox()
 
         print('Chat encontrado!')
         return
@@ -25,11 +25,11 @@ def wait_chat():
 
         wait_chat()
 
-def accessChat(phone):
-    driver.get(getChatUrl(phone))
+def message_phone(phone):
+    driver.get(get_chat_url(phone))
 
     wait_chat()
 
 
 
-accessChat('5513997406352')
+message_phone('5513997406352')
