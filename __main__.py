@@ -40,8 +40,6 @@ def message_phone(phone):
 
     send_message('teste drive', textbox)
 
-    print(textbox)
-
 
 
 message_phone('5513997406352')
