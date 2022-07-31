@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 
@@ -28,10 +29,16 @@ def wait_textbox():
 
         return wait_textbox()
 
+def send_message(message, textbox):
+    textbox.send_keys(message + Keys.ENTER)
+
+
 def message_phone(phone):
     access_chat(phone)
 
     textbox = wait_textbox()
+
+    send_message('teste drive', textbox)
 
     print(textbox)
 
