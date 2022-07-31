@@ -11,6 +11,9 @@ def get_chat_url(phone):
 def get_textbox():
     return driver.find_element(By.CSS_SELECTOR, '[data-testid="conversation-panel-wrapper"] [role="textbox"][contenteditable]')
 
+def access_chat(phone):
+    return driver.get(get_chat_url(phone))
+
 def wait_textbox():
     try:
         textbox = get_textbox()
@@ -26,7 +29,7 @@ def wait_textbox():
         return wait_textbox()
 
 def message_phone(phone):
-    driver.get(get_chat_url(phone))
+    access_chat(phone)
 
     textbox = wait_textbox()
 
