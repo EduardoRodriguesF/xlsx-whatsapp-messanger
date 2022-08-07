@@ -4,15 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
+from driver import driver
 
-driver = webdriver.Chrome()
-
-def wait_element(by, selector):
-    try: 
-        return driver.find_element(by, selector)
-    except NoSuchElementException:
-        sleep(.2)
-        return wait_element(by, selector)
+from utils.wait_element import wait_element
 
 def get_chat_url(phone):
     return 'https://web.whatsapp.com/send?phone={}&text&type=phone_number&app_absent=0'.format(phone)
