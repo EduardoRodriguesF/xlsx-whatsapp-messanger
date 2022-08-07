@@ -16,4 +16,5 @@ def deliver_to_phone(phone):
     send_message('teste drive')
     send_image('./message/example.jpg')
 
-deliver_to_phone('5513997406352')
+if __name__ == '__main__':
+    deliver_to_phone('5513997406352')
