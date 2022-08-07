@@ -22,8 +22,6 @@ def open_clip():
 
     clip.click()
 
-    sleep(1.5)
-
 def access_chat(phone):
     return driver.get(get_chat_url(phone))
 
@@ -34,7 +32,7 @@ def send_image(image):
     open_clip()
     image_abs = os.path.abspath(image)
 
-    attach_media_button = driver.find_element(By.CSS_SELECTOR, '[data-testid="mi-attach-media"] input[type="file"]')
+    attach_media_button = wait_element(By.CSS_SELECTOR, '[data-testid="mi-attach-media"] input[type="file"]')
     attach_media_button.send_keys(image_abs)
 
     send_button = wait_element(By.CSS_SELECTOR, '.copyable-area [role="button"] [data-testid="send"]')
