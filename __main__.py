@@ -33,7 +33,7 @@ def send_message(message, textbox):
     textbox.send_keys(message + Keys.ENTER)
 
 
-def message_phone(phone):
+def deliver_to_phone(phone):
     access_chat(phone)
 
     textbox = wait_textbox()
@@ -42,4 +42,4 @@ def message_phone(phone):
 
 
 
-message_phone('5513997406352')
+deliver_to_phone('5513997406352')
