@@ -64,6 +64,4 @@ def deliver_to_phone(phone):
     send_message('teste drive', textbox)
     send_image('./message/example.jpg')
 
-
-
 deliver_to_phone('5513997406352')
