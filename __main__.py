@@ -5,19 +5,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 from driver import driver
-
+from utils.access_chat import access_chat
 from utils.wait_element import wait_element
-
-def get_chat_url(phone):
-    return 'https://web.whatsapp.com/send?phone={}&text&type=phone_number&app_absent=0'.format(phone)
 
 def open_clip():
     clip = driver.find_element(By.CSS_SELECTOR, '[data-testid="conversation-clip"] [role="button"]')
 
     clip.click()
-
-def access_chat(phone):
-    return driver.get(get_chat_url(phone))
 
 def send_message(message, textbox):
     textbox.send_keys(message + Keys.ENTER)
