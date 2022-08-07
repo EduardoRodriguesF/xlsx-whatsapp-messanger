@@ -7,14 +7,12 @@ from time import sleep
 from driver import driver
 from utils.access_chat import access_chat
 from utils.wait_element import wait_element
+from utils.send_message import send_message
 
 def open_clip():
     clip = driver.find_element(By.CSS_SELECTOR, '[data-testid="conversation-clip"] [role="button"]')
 
     clip.click()
-
-def send_message(message, textbox):
-    textbox.send_keys(message + Keys.ENTER)
 
 def send_image(image):
     open_clip()
@@ -30,9 +28,7 @@ def send_image(image):
 def deliver_to_phone(phone):
     access_chat(phone)
 
-    textbox = wait_element(By.CSS_SELECTOR, '[data-testid="conversation-panel-wrapper"] [role="textbox"][contenteditable]')
-
-    send_message('teste drive', textbox)
+    send_message('teste drive')
     send_image('./message/example.jpg')
 
 deliver_to_phone('5513997406352')
