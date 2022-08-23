@@ -3,10 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from utils.wait_element import wait_element
 
-
 def open_clip():
     clip = wait_element(By.CSS_SELECTOR, '[data-testid="conversation-clip"] [role="button"]')
-
     clip.click()
 
 def send_image(image):
