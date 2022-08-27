@@ -1,7 +1,7 @@
 import re
 
 def is_phone_valid(phone):
-    return len(phone) > 13
+    return len(phone) <= 13
 
 def sanitize_phone(phone):
     if (len(phone) < 3): return ''
