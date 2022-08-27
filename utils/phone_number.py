@@ -8,7 +8,7 @@ def sanitize_phone(phone):
 
     result = re.sub('[^0-9]', '', phone)
 
-    if (result[0] != '5' or result[1] != '5'):
+    if (result[0] != '5'):
         result = '55' + result
 
     return result
