@@ -1,7 +1,9 @@
 import re
 
 def is_phone_valid(phone):
-    return len(phone) == 13 or len(phone) == 12
+    result = phone.split('/')[0].strip()
+
+    return len(result) == 13 or len(result) == 12
 
 def sanitize_phone(phone):
     if (len(phone) < 3): return ''
