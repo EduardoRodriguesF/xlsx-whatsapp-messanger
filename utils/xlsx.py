@@ -4,7 +4,9 @@ from os.path import abspath
 from utils.phone_number import sanitize_phone, is_phone_valid
 
 def get_sheets_data():
-    excel_data = pandas.read_excel('data/data.xlsx')
+    sheets_path = abspath('data/data.xlsx')
+
+    excel_data = pandas.read_excel(sheets_path)
     
     json_str = excel_data.to_json(orient='records')
 
