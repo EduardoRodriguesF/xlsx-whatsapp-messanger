@@ -1,10 +1,10 @@
 import json
 import pandas
-from os.path import abspath, join
+from os.path import abspath
 from utils.phone_number import sanitize_phone, is_phone_valid
 
 def get_sheets_data():
-    sheets_path = join('data', 'data.xlsx')
+    sheets_path = abspath('data/data.xlsx')
 
     excel_data = pandas.read_excel(sheets_path)
     
