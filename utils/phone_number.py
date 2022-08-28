@@ -8,6 +8,8 @@ def is_phone_valid(phone):
     return len(result) == 13 or len(result) == 12
 
 def sanitize_phone(phone):
+    phone = str(phone)
+
     if (len(phone) < 3): return ''
 
     result = re.sub('[^0-9]', '', phone)
