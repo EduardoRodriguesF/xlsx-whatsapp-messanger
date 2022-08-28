@@ -1,10 +1,6 @@
 from utils.xlsx import for_each_valid_phone
-from utils.access_chat import access_chat
+from utils.deliver import deliver_to_phone
 from time import sleep
 
 if __name__ == '__main__':
-    def callback(phone):
-        access_chat(phone)
-        sleep(10)
-
-    for_each_valid_phone(callback)
+    for_each_valid_phone(deliver_to_phone)
