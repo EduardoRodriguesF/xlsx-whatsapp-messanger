@@ -4,12 +4,16 @@ from time import sleep
 from driver import driver
 
 def wait_element(by, selector):
-    try: 
+    element = None
+
+    while not element:
         try:
-            fallback_element = driver.find_element(By.CSS_SELECTOR, '[role="button"][data-testid="popup-controls-ok"]')
-            return False
+            try:
+                fallback_element = driver.find_element(By.CSS_SELECTOR, '[role="button"][data-testid="popup-controls-ok"]')
+                return False
+            except NoSuchElementException:
+                element = driver.find_element(by, selector)
         except NoSuchElementException:
-            return driver.find_element(by, selector)
-    except NoSuchElementException:
-        sleep(.2)
-        return wait_element(by, selector)
+            sleep(.2)
+
+    return element
