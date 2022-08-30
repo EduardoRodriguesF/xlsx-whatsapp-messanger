@@ -12,4 +12,4 @@ def send_from_directory(directory):
                 send_message(f.read())
         else:
             send_image(file)
-            sleep(3)
+            sleep(6)
